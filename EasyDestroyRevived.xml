@@ -1,0 +1,147 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+	<Script file="EasyDestroyRevived.lua" />
+	<CheckButton name="EasyDestroyCheckTemplate" inherits="UICheckButtonTemplate" virtual="true">
+		<HitRectInsets>
+			<AbsInset left="0" right="-100" top="0" bottom="0"/>
+		</HitRectInsets>
+		<Scripts>
+			<OnClick function="EasyDestroy_OptionsCheckButtonOnClick" />
+			<OnEnter>
+				if ( self.tooltipText ) then
+					GameTooltip:SetOwner(self, "ANCHOR_LEFT");
+					GameTooltip:SetBackdropColor(0.0, 0.0, 0.0);
+					GameTooltip:SetText(self.tooltipText, 1.0, 1.0, 1.0);
+				end
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+		</Scripts>
+	</CheckButton>
+	
+	<Frame name="EasyDestroyOptions" toplevel="true" frameStrata="MEDIUM" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="225" y="200" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" />
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />	
+				<Size>
+					<AbsDimension x="128" y="17" />
+				</Size>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="EasyDestroyOptionsFrameTitle" file="Interface\DialogFrame\UI-DialogBox-Header">
+					<Size>
+						<AbsDimension x="276" y="64" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="12" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString inherits="GameFontNormal" text="EasyDestroy">
+					<Anchors>
+						<Anchor point="TOP" relativeTo="EasyDestroyOptions">
+							<Offset>
+								<AbsDimension x="0" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		
+		<Frames>
+			<CheckButton name="EasyDestroyOptionsFrame_CheckButton1" inherits="EasyDestroyCheckTemplate">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="TOP" relativeTo="EasyDestroyOptions">
+						<Offset>
+							<AbsDimension x="-40" y="-50" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="EasyDestroyOptionsFrame_CheckButton2" inherits="EasyDestroyCheckTemplate">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="TOP" relativeTo="EasyDestroyOptions">
+						<Offset>
+							<AbsDimension x="-40" y="-80" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="EasyDestroyOptionsFrame_CheckButton3" inherits="EasyDestroyCheckTemplate">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="TOP" relativeTo="EasyDestroyOptions">
+						<Offset>
+							<AbsDimension x="-40" y="-110" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<!-- ?? -->
+			<Frame name="EasyDestroyOptionsFrame">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="TOP" relativeTo="EasyDestroyOptions">
+						<Offset>
+							<AbsDimension x="-10" y="-85" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+					
+			<Button name="EasyDestroyOptionsClose" inherits="OptionsButtonTemplate" text="Close">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="BOTTOM" relativeTo="EasyDestroyOptions">
+						<Offset>
+							<AbsDimension x="-45" y="30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("gsTitleOptionOK");
+						EasyDestroyOptions_Hide(self);
+					</OnClick>
+				</Scripts>
+			</Button>
+			
+			<Button name="EasyDestroyOptionsReset" inherits="OptionsButtonTemplate" text="Defaults">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="BOTTOM" relativeTo="EasyDestroyOptions">
+						<Offset>
+							<AbsDimension x="45" y="30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("igMainMenuOptionCheckBoxOn");
+						EasyDestroyOptions_Defaults(self);
+					</OnClick>
+				</Scripts>
+			</Button>
+			
+		</Frames>
+		<Scripts>
+			<OnShow>
+				EasyDestroyOptions_Show(self);
+			</OnShow>
+		</Scripts>	
+	</Frame>
+</Ui>

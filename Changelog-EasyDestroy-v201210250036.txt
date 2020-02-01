@@ -1,0 +1,13 @@
+------------------------------------------------------------------------
+r37 | egingell | 2012-10-25 06:37:00 +0000 (Thu, 25 Oct 2012) | 1 line
+Changed paths:
+   A /tags/v201210250036 (from /trunk:36)
+
+-- Tagging
+------------------------------------------------------------------------
+r36 | egingell | 2012-10-25 06:34:03 +0000 (Thu, 25 Oct 2012) | 1 line
+Changed paths:
+   M /trunk/EasyDestroy.toc
+
+-- ##Interface: 50001 (I don't normally do this, but I think it's time I did one.) Please note that this is *only* an Interface ding. I have not confirmed whether it works in the current WoW version.
+------------------------------------------------------------------------
