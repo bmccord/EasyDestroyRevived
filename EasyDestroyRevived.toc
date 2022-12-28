@@ -6,7 +6,7 @@
 ## Notes: Hold Alt-Shift and right-click an item to destroy it.
 ## OptionalDeps: myAddOns
 ## SavedVariables: EasyDestroy_Options, EasyDestroy_Safe
-## Version: v11303.2
+## Version: v30400.1
 ## Author: CodeWolf2000
 
 EasyDestroyRevived.xml
