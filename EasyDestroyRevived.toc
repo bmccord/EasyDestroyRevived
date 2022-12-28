@@ -1,4 +1,4 @@
-## Interface: 11303
+## Interface: 30400
 ## Title: EasyDestroy Revived
 #@debug@
 # ## Title: |cffff0088EBG|r EasyDestroy Revived
