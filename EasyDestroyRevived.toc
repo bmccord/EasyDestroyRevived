@@ -1,4 +1,4 @@
-## Interface: 30400
+## Interface: 30401
 ## Title: EasyDestroy Revived
 #@debug@
 # ## Title: |cffff0088EBG|r EasyDestroy Revived
@@ -6,7 +6,7 @@
 ## Notes: Hold Alt-Shift and right-click an item to destroy it.
 ## OptionalDeps: myAddOns
 ## SavedVariables: EasyDestroy_Options, EasyDestroy_Safe
-## Version: v30400.1
+## Version: v30401.0
 ## Author: CodeWolf2000
 
 EasyDestroyRevived.xml
