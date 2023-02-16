@@ -433,7 +433,7 @@ function EasyDestroy_DestroyItem(bag, slot)
 				-- Either they've confirmed the deletion by clicking twice and we're seeing the same item,
 				-- or the item's White or less and we don't care if it gets destroyed.
 				if (bag ~= -1 and slot ~= -1) then
-					PickupContainerItem(bag, slot);
+					C_Container.PickupContainerItem(bag, slot);
 				end
 	
 				if ( CursorHasItem() ) then
