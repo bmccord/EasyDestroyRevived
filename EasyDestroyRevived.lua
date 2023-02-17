@@ -414,7 +414,11 @@ end
 -- Generic function to allow either hooked function to destroy an item at <bag>,<slot>. 
 function EasyDestroy_DestroyItem(bag, slot)		
 	if ( EasyDestroy_Options.On and IsAltKeyDown() and IsShiftKeyDown() ) then
-		local _, itemCount, _, _ = C_Container.GetContainerItemInfo(bag, slot);
+		local containerInfo = C_Container.GetContainerItemInfo(bag, slot);
+		if not containerInfo then
+			return
+		end
+		local itemCount = containerInfo.stackCount;
 		local itemLink = C_Container.GetContainerItemLink(bag, slot);
 	
 		-- Normalize the itemName.
