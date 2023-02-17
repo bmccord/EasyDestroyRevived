@@ -19,14 +19,19 @@
 		</Scripts>
 	</CheckButton>
 	
-	<Frame name="EasyDestroyOptions" toplevel="true" frameStrata="MEDIUM" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+	<Frame name="EasyDestroyOptions" toplevel="true" frameStrata="MEDIUM" movable="true" enableMouse="true" hidden="true" parent="UIParent" inherits="BackdropTemplate">
 		<Size>
 			<AbsDimension x="225" y="200" />
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER" />
 		</Anchors>
-		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/>
+			<KeyValue key="backdropColor" value="BLACK" type="global"/>
+			<KeyValue key="backdropBorderColor" value="WHITE" type="global"/>
+		</KeyValues>		
+		<!--<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
 			<BackgroundInsets>
 				<AbsInset left="11" right="12" top="12" bottom="11" />	
 				<Size>
@@ -39,7 +44,7 @@
 			<EdgeSize>
 				<AbsValue val="32" />
 			</EdgeSize>
-		</Backdrop>
+		</Backdrop>-->
 		<Layers>
 			<Layer level="ARTWORK">
 				<Texture name="EasyDestroyOptionsFrameTitle" file="Interface\DialogFrame\UI-DialogBox-Header">
@@ -115,7 +120,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						PlaySound("gsTitleOptionOK");
+						PlaySound(SOUNDKIT.GS_TITLE_OPTION_OK);
 						EasyDestroyOptions_Hide(self);
 					</OnClick>
 				</Scripts>
@@ -131,7 +136,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						PlaySound("igMainMenuOptionCheckBoxOn");
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 						EasyDestroyOptions_Defaults(self);
 					</OnClick>
 				</Scripts>
